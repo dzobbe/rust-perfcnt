@@ -35,7 +35,7 @@ fn perf_event_open(hw_event: &perf_format::EventAttr,
                    group_fd:  ::libc::c_int,
                    flags:  ::libc::c_int) -> isize {
     unsafe {
-         x86::bits64::syscall::syscall!(PERF_EVENT_OPEN, hw_event as *const perf_format::EventAttr as usize, pid, cpu, group_fd, flags) as isize
+         syscall!(PERF_EVENT_OPEN, hw_event as *const perf_format::EventAttr as usize, pid, cpu, group_fd, flags) as isize
     }
 }
 
