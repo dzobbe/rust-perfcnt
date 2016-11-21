@@ -9,7 +9,6 @@ use std::mem;
 use std::fmt;
 use std::str;
 use std::ptr;
-use x86::bits64::syscall::syscall0;
 
 use libc::{pid_t, MAP_SHARED, strlen};
 use mmap;
@@ -22,6 +21,8 @@ mod perf_event;
 pub mod perf_format;
 pub mod perf_file;
 pub mod parser;
+#[macro_use]
+pub mod syscall;
 
 use ::AbstractPerfCounter;
 use x86::shared::perfcnt::intel::{EventDescription, Tuple};
