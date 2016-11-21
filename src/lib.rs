@@ -1,4 +1,5 @@
 #![feature(type_macros)]
+#![feature(asm)]
 
 extern crate libc;
 #[macro_use]
